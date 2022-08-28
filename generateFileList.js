@@ -6,7 +6,7 @@ const FOLDER_ID = "1EtXAVavOYZeUTy-rOGNiadFhSKm4C3jX"
 const https = require('https')
 const fs = require('fs')
 
-https.get(`https://www.googleapis.com/drive/v3/files?q=%27${FOLDER_ID}%27+in+parents&key=${API_KEY}`, (res) => {
+https.get(`https://www.googleapis.com/drive/v3/files?pageSize=1000&q=%27${FOLDER_ID}%27+in+parents&key=${API_KEY}`, (res) => {
     console.log(res.statusCode, res.statusMessage)
     
     let data = [];
@@ -18,7 +18,7 @@ https.get(`https://www.googleapis.com/drive/v3/files?q=%27${FOLDER_ID}%27+in+par
         console.log('Response ended: ');
         const bodyBuffer = Buffer.concat(data).toString();
         const body = JSON.parse(bodyBuffer);
-        console.log(body)
+        console.log(body, body.files.length)
         fs.writeFile("./res/list.js", `const list = ${JSON.stringify(body.files)}`, (err) => {
             console.log("Writing File | Error", err ? err : "N/A")
         })  
