@@ -18,7 +18,7 @@ https.get(`https://www.googleapis.com/drive/v3/files?pageSize=1000&q=%27${FOLDER
         console.log('Response ended: ');
         const bodyBuffer = Buffer.concat(data).toString();
         const body = JSON.parse(bodyBuffer);
-        console.log(body, body.files.length)
+        console.log(body, body?.files?.length)
         fs.writeFile("./res/list.js", `const list = ${JSON.stringify(body.files)}`, (err) => {
             console.log("Writing File | Error", err ? err : "N/A")
         })  
