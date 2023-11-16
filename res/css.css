@@ -16,7 +16,7 @@
 }
 body {
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: hidden;
 }
 h1 {
     font-size: 5vh;
@@ -42,3 +42,24 @@ hr {
     border-top: 1px solid #aaaaaa;
     border-bottom: 1px solid #ffffff;
  }
+
+
+ /* width */
+::-webkit-scrollbar {
+    width: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
