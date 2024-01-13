@@ -11,7 +11,7 @@ const imageFromDrive = randomFromList(list);
 var src = document.getElementById("imgbox");
 
 var img = document.createElement("img");
-img.src = `https://drive.google.com/uc?export=view&id=${imageFromDrive.id}`;
+img.src = `https://drive.google.com/uc?id=${imageFromDrive.id}`;
 img.className = "center-fit"
 
 const onError = () => {
