@@ -11,7 +11,8 @@ const imageFromDrive = randomFromList(list);
 var src = document.getElementById("imgbox");
 
 var img = document.createElement("img");
-img.src = `https://drive.usercontent.google.com/download?id=${imageFromDrive.id}&authuser=0`;
+img.setAttribute('referrerpolicy', 'no-referrer')
+img.src = `https://lh3.google.com/u/0/d/${imageFromDrive.id}`;
 img.className = "center-fit"
 
 const onError = () => {
