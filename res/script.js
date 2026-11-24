@@ -12,7 +12,7 @@ var src = document.getElementById("imgbox");
 
 var img = document.createElement("img");
 img.setAttribute('referrerpolicy', 'no-referrer')
-img.src = `https://lh3.google.com/u/0/d/${imageFromDrive.id}`;
+img.src = `https://lh3.googleusercontent.com/d/${imageFromDrive.id}`;
 img.className = "center-fit"
 
 const onError = () => {
